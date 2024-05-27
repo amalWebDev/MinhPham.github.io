@@ -25,8 +25,8 @@
     --unactive-color: #B8AC9980;
     --mask-color: #EB5939;
     --secondary-font-color: #EB5939;
-    --cursor-x: 0px;
-    --cursor-y: 0px;
+    --cursor-x: 50%;
+    --cursor-y: 50%;
     --cursor-size: 15px;
 }
 
