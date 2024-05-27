@@ -387,7 +387,7 @@ logo.addEventListener("mouseout", (e) => {
 // All the Gsap Stuffs
 gsap.to(".loader-btn", {
   opacity: 1,
-  delay: 1.8,
+  delay: 2,
   display: "block",
   translateY: -95,
   duration: 0.5,
@@ -395,9 +395,8 @@ gsap.to(".loader-btn", {
 
 gsap.to(".loader-logo", {
   opacity: 1,
-  delay: 1.8,
+  delay: 2,
   translateY: -60,
   duration: 0.7,
 });
-
 
