@@ -50,6 +50,7 @@ body {
     overflow: hidden;
     background-color: var(--bg-color);
     cursor: default;
+    scroll-behavior: smooth;
 
 }
 
