@@ -1,0 +1,398 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: ITC;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+@font-face {
+    font-family: ITC;
+    src: url(./assets/font/ITC.woff2);
+}
+
+@font-face {
+    font-family: Proxima;
+    src: url(./assets/font/Proxima.woff2);
+}
+
+:root {
+    --bg-color: #0D0D0D;
+    --secondary-bg-color: #3f3f3fa8;
+    --color: #0D0D0D;
+    --primary-font-color: #B7AB98;
+    --primary-color: #B7AB98;
+    --unactive-color: #B8AC9980;
+    --mask-color: #EB5939;
+    --secondary-font-color: #EB5939;
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    --cursor-size: 15px;
+}
+
+
+
+::-webkit-scrollbar {
+    background-color: var(--bg-color);
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-bg-color);
+    border-radius: 5px;
+}
+
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    cursor: default;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 100vw;
+    
+}
+
+
+/* MASK CURSOR */
+
+.mask-cursor {
+    position: absolute;
+    z-index: 99999;
+}
+
+.mask {
+    position: relative;
+}
+
+/* PAGE LOADER SECTION */
+
+.page-loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999;
+    background-color: var(--bg-color);
+}
+
+.loader-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loader-progress {
+    position: relative;
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 1;
+    stroke-dasharray: 830;
+    stroke-dashoffset: 830;
+    rotate: -90deg;
+}
+
+.loader-progress circle {
+    stroke-dashoffset: calc(830 - (830 * 80) / 100);
+}
+
+.loader-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -65%);
+}
+
+.loader-counter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 36%;
+    font-size: 12px;
+    color: var(--primary-font-color);
+}
+
+.btn {
+    width: 160px;
+    height: 45px;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-radius: 25px;
+    color: var(--primary-font-color);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    border: 1px solid var(--primary-color);
+    transition: all ease .2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--color);
+}
+
+.loader-btn {
+    position: relative;
+    top: 4%;
+    opacity: 0;
+    font-size: 13px;
+    display: none;
+}
+
+
+/* NAV SECTION */
+.navbar {
+    position: relative;
+    z-index: 10;
+}
+
+
+.logo {
+    position: fixed;
+    left: 1.5rem;
+    margin-top: 2.1rem;
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    position: fixed;
+    right: 1.5rem;
+    margin-top: 2.1rem;
+    text-align: right;
+}
+
+.link {
+    color: var(--unactive-color);
+    line-height: 1.5;
+    display: block;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+.menu-link-inner {
+    position: relative;
+    display: block;
+    clip-path: inset(0);
+}
+
+.link1 {
+    position: relative;
+}
+
+.link2 {
+    position: absolute;
+    right: 0%;
+    top: 20px;
+    color: var(--primary-font-color);
+}
+
+
+
+
+/* ABOUT SECTION */
+
+.about-section {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.hero-bg video {
+    position: absolute;
+    z-index: -9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    scale: 1.2;
+    object-fit:cover;
+    object-position: 65%;
+}
+
+
+
+
+
+.hero-content {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+}
+
+.hero-layer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-container {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-font-color);
+
+    width: 100%;
+
+}
+
+.text-container h6 {
+    color: var(--unactive-color);
+    font-size: .9rem;
+    letter-spacing: 7px;
+    margin-bottom: 1rem;
+}
+
+.text-container h1 {
+    position: relative;
+    height: 4.3rem;
+    overflow: hidden;
+    /* background-color: aquamarine; */
+}
+
+
+.text-container h1 span {
+    
+    font-size: 5rem;
+    line-height: 4.5rem;
+    letter-spacing: -.2rem;
+    position: relative;
+}
+
+.orange-text {
+    color: var(--secondary-font-color);
+}
+
+.invisible-layer {
+    /* visibility: hidden; */
+    background-color: var(--mask-color);
+    mask: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjUwIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: calc(var(--cursor-x) - var(--cursor-size) / 2) calc(var(--cursor-y) - var(--cursor-size) / 2);
+    -webkit-cursor-position: calc(var(--cursor-x) - var(--cursor-size) / 2) calc(var(--cursor-y) - var(--cursor-size) / 2);
+    mask-size: var(--cursor-size);
+    pointer-events: none;
+    transition: all .3s ease-out ;
+
+}
+
+
+
+.invisible-layer .text-container h1 {
+    color: var(--color);
+    font-size: 5rem;
+    line-height: 4.5rem;
+    letter-spacing: -.3rem;
+}
+
+.invisible-layer .text-container h6 {
+    color: var(--color);
+}
+
+
+
+
+
+
+
+
+
+#work {
+    height: 100vh;
+    position: relative;
+
+    background-color: #101010;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+    position: fixed;
+    top: 88%;
+    right: -1%;
+    rotate: -90deg;
+}
+
+
+.sound-box {
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sound-box:hover .sound-label {
+    color: var(--primary-font-color);
+}
+
+.sound-label {
+    color: var(--unactive-color);
+    transition: all .2s;
+
+}
+
+.sound-list {
+    color: var(--primary-font-color);
+    position: relative;
+    clip-path: inset(0);
+}
+
+.sound-on {
+    position: absolute;
+    right: 0%;
+    text-align: left;
+    width: 100%;
+}
+
+.sound-off {
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
