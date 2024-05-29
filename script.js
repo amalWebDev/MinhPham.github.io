@@ -38,7 +38,7 @@ let progressTimer = setInterval(() => {
 
 // CLUTTER LETTERS
 
-let heroHeading = document.querySelectorAll(".visible-layer .text-container h1");
+let heroHeading = document.querySelectorAll(".visible-layer .big-text-container h1");
 
 heroHeading.forEach((elem) => {
   let content = elem.textContent;
@@ -169,7 +169,7 @@ loaderBtn.addEventListener("click", () => {
 // mask cursor
 
 let wrapper = document.querySelector(".wrapper");
-let textContainer = document.querySelector(".text-container");
+let textContainer = document.querySelector(".big-text-container");
 let noMask = document.querySelectorAll(".no-mask");
 
 wrapper.addEventListener("mousemove", (e) => {
@@ -387,7 +387,7 @@ logo.addEventListener("mouseout", (e) => {
 // All the Gsap Stuffs
 gsap.to(".loader-btn", {
   opacity: 1,
-  delay: 2,
+  delay: 1.8,
   display: "block",
   translateY: -95,
   duration: 0.5,
@@ -395,8 +395,9 @@ gsap.to(".loader-btn", {
 
 gsap.to(".loader-logo", {
   opacity: 1,
-  delay: 2,
+  delay: 1.8,
   translateY: -60,
   duration: 0.7,
 });
+
 
